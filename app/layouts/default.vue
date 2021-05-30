@@ -1,9 +1,11 @@
 <template>
   <div class="general center">
     <div class="general__content center">
-      <Logo />
+      <div class="general__content__logo">
+        <Logo />
+      </div>
       <div class="general__content__form">
-        <SearchForm />
+        <SearchForm v-on="$listeners" v-bind="$attrs" @request="eventHandler" />
       </div>
     </div>
   </div>
@@ -12,6 +14,13 @@
 <script>
 export default {
   name: 'Default',
+
+  methods: {
+    eventHandler(payload) {
+      console.log(payload)
+      this.$nuxt.setLayout('inside')
+    },
+  },
 }
 </script>
 
@@ -28,19 +37,13 @@ export default {
     position: relative
     top: -40px
 
-    @media (max-width: 480px)
-      justify-content: flex-start !important
-      padding: 0 20px
-
     &__logo
       height: 160px
       width: 160px
-      background-color: $base-yellow
-      margin-bottom: 10px
 
-    &__title
-      font-weight: 600
-      font-size: 28px
+    @media (max-width: 480px)
+      justify-content: flex-start !important
+      padding: 0 20px
 
     &__form
       width: 100%

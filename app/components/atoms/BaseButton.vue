@@ -5,6 +5,7 @@
       success: success,
       base: !success,
     }"
+    @click="clickHandler"
   >
     <slot />
   </div>
@@ -23,6 +24,12 @@ export default {
     base: {
       type: Boolean,
       default: true,
+    },
+  },
+
+  methods: {
+    clickHandler() {
+      this.$emit('click')
     },
   },
 }
