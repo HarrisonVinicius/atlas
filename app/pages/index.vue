@@ -1,5 +1,7 @@
 <template>
-  <div class="index"></div>
+  <div class="index">
+    <Logo />
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,5 @@ export default {}
 
 <style lang="sass" scoped>
 .index
-  min-height: 700px
-  background-color: $base-yellow
+  height: 100%
 </style>
