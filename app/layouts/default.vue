@@ -25,6 +25,12 @@ export default {
     height: 450px
     width: 450px
     flex-direction: column
+    position: relative
+    top: -40px
+
+    @media (max-width: 480px)
+      justify-content: flex-start !important
+      padding: 0 20px
 
     &__logo
       height: 160px
