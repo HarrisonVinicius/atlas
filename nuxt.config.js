@@ -62,8 +62,6 @@ export default {
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     '@nuxtjs/style-resources',
-    // https://www.npmjs.com/package/@nuxtjs/device
-    '@nuxtjs/device',
     // https://www.npmjs.com/package/vue-scrollto
     'vue-scrollto/nuxt',
   ],
