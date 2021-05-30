@@ -12,8 +12,8 @@ export default {
 
 <style lang="sass" scoped>
 .logo
-  height: 160px
-  width: 160px
+  height: 100%
+  width: 100%
   margin-bottom: 10px
   display: flex
   justify-content: center
