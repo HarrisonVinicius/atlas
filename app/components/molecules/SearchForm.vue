@@ -66,6 +66,7 @@ export default {
     justify-content: center
     font-size: 32px
     font-weight: 400
+    margin-bottom: 10px
 
   &__content
     &__error
