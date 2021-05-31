@@ -23,6 +23,16 @@ export default {
   box-shadow: 0px 1px 13px 0px #6B6B6B
   display: flex
   align-items: center
+  position: fixed
+  z-index: 1
+  background-color: #fff
+
+  @media (max-width: 480px)
+    &__logo
+      display: none
+
+    &__title
+      display: none
 
   &__logo
     height: 60px

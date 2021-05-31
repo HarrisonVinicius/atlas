@@ -1,5 +1,6 @@
 <template>
   <div class="base-input">
+    <slot />
     <input v-model="value" type="text" :placeholder="placeholder" />
   </div>
 </template>
@@ -11,7 +12,7 @@ export default {
   props: {
     placeholder: {
       type: String,
-      required: true,
+      required: false,
       default: 'Buscar...',
     },
   },
@@ -36,6 +37,9 @@ export default {
 .base-input
   height: 100%
   width: 100%
+  display: flex
+  position: relative
+  z-index: 0
 
   input
     border: 1px solid $mid-gray

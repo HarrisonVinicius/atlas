@@ -40,6 +40,7 @@ export default {
     &__logo
       height: 160px
       width: 160px
+      margin-bottom: 10px
 
     @media (max-width: 480px)
       justify-content: flex-start !important
