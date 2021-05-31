@@ -19,8 +19,6 @@ export default {
 
 <style lang="sass" scoped>
 .base-avatar
-    height: 12vh
-    width: 12vh
-    border-radius: 55%
-    background-color: black
+  height: 100%
+  width: 100%
 </style>

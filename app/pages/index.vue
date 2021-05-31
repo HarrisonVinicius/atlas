@@ -1,31 +1,57 @@
 <template>
-  <div class="index">
-    <BaseCard class="index__card">
-      <TheUsersList />
-    </BaseCard>
+  <div class="general center">
+    <div class="general__content center">
+      <div class="general__content__logo">
+        <Logo />
+      </div>
+      <div class="general__content__form">
+        <SearchForm v-on="$listeners" v-bind="$attrs" @request="eventHandler" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Default',
+
+  methods: {
+    eventHandler(payload) {
+      console.log(payload)
+      this.$router.push('/users/users-list')
+    },
+  },
+}
 </script>
 
 <style lang="sass" scoped>
-.index
-  min-height: 91vh
-  padding: 19.5%
+.general
+  overflow: hidden
+  height: 100vh
 
-  @media (max-width: 480px)
-    &__card
-      padding: 0 !important
-      border: none !important
+  &__content
+    margin: 0 !important
+    height: 450px
+    width: 450px
+    flex-direction: column
+    position: relative
+    top: -40px
 
-  @media (max-width: 1250px)
-    padding: 12% 10% !important
+    &__logo
+      height: 160px
+      width: 160px
+      margin-bottom: 10px
 
-  @media (max-width: 900px)
-    padding: 15% 5% !important
+    @media (max-width: 480px)
+      justify-content: flex-start !important
+      padding: 0 20px
 
-  @media (max-width: 500px)
-    padding: 25% 5% !important
+    &__form
+      width: 100%
+      height: 45px
+
+.center
+  display: flex
+  justify-content: center
+  align-items: center
 </style>

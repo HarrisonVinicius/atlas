@@ -1,5 +1,16 @@
 <template>
   <div class="nav-bar">
+    <div class="nav-bar__icon" @click="returnHandler">
+      <img
+        src="/icons/arrow-left-icon.png"
+        alt="arrow-left"
+        height="25px"
+        width="25px"
+      />
+    </div>
+    <div class="nav-bar__title-mobile">
+      <span> {{ title }} </span>
+    </div>
     <div class="nav-bar__logo">
       <Logo />
     </div>
@@ -12,6 +23,19 @@
 <script>
 export default {
   name: 'BaseNavBar',
+
+  props: {
+    title: {
+      type: String,
+      default: 'GitSearch',
+    },
+  },
+
+  methods: {
+    returnHandler() {
+      this.$router.go(-1)
+    },
+  },
 }
 </script>
 
@@ -28,10 +52,19 @@ export default {
   background-color: #fff
 
   @media (max-width: 480px)
+    padding: 18px 5%
+
     &__logo
       display: none
 
     &__title
+      display: none
+
+  @media (min-width: 480px)
+    &__icon
+      display: none
+
+    &__title-mobile
       display: none
 
   &__logo
@@ -41,5 +74,10 @@ export default {
   &__title
     font-size: 22px
     font-weight: 600
-    margin-left: 5px
+    margin-left: 10px
+
+  &__title-mobile
+    font-size: 20px
+    font-weight: 500
+    margin-left: 10px
 </style>

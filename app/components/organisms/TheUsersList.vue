@@ -19,6 +19,7 @@
         v-for="(item, index) in items"
         :key="index"
         class="the-users-list__list__item"
+        @click="goToUserPerfilHandler"
       >
         <UserCard />
       </div>
@@ -45,6 +46,17 @@ export default {
         { item: 1 },
       ],
     }
+  },
+
+  methods: {
+    goToUserPerfilHandler() {
+      this.$router.push({
+        path: 'user-perfil',
+        query: {
+          userId: '00000000',
+        },
+      })
+    },
   },
 }
 </script>

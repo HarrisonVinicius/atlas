@@ -2,7 +2,9 @@
   <div class="user-card">
     <BaseCard class="user-card__wrapper">
       <div class="user-card__wrapper__content">
-        <BaseAvatar />
+        <div class="user-card__wrapper__content__avatar">
+          <BaseAvatar />
+        </div>
         <div class="user-card__wrapper__content__user-name">
           <span> teste12345... </span>
         </div>
@@ -43,12 +45,22 @@ export default {
             align-items: center
             flex-direction: column
 
+            &__avatar
+              height: 12vh
+              width: 12vh
+              border-radius: 55%
+
             &__user-name
                 margin-top: 10px
 
             @media (max-width: 480px)
               flex-direction: row
               justify-content: flex-start
+
+              &__avatar
+                height: 10vh
+                width: 10vh
+                border-radius: 50%
 
               &__user-name
                 margin-left: 20px
