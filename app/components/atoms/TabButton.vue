@@ -45,10 +45,18 @@ export default {
   font-size: 18px
   cursor: pointer
   border-bottom: 1px solid $mid-gray
+  font-weight: 500
+
+  @media (max-width: 1280px)
+    border-right: 1px solid $mid-gray
 
   &:hover
     opacity: 0.7
 
 .active
   border-right: 2px solid $base-blue
+
+  @media (max-width: 1280px)
+    border-right: 1px solid $mid-gray !important
+    border-bottom: 3px solid $base-blue !important
 </style>

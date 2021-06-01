@@ -79,6 +79,24 @@ export default {
     min-height: 450px
     display: flex
 
+    @media (max-width: 1280px)
+      flex-direction: column !important
+      position: relative
+      top: 235px
+
+      &__buttons-column
+        width: 100% !important
+        border-right: none !important
+        border-bottom: 1px solid $darken-gray
+        min-height: 50px !important
+        padding-top: 0 !important
+
+        &__buttons
+          display: flex
+
+      &__tabs-column
+        width: 100% !important
+
     &__buttons-column
         width: 25%
         min-height: 450px

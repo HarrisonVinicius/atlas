@@ -5,8 +5,8 @@
     </div>
     <div class="the-user-perfil__tabs">
       <BaseTabs>
-        <template #1> <span> 0 </span> </template>
-        <template #2> <span> 1 </span> </template>
+        <template #1> <AboutPerfilTab /> </template>
+        <template #2> <PlansPerfilTab /> </template>
       </BaseTabs>
     </div>
   </div>

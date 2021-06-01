@@ -69,10 +69,6 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.BASE_URL,
-    // 'https://api-app.dmcview.com.br',
-    headers: {
-      Authorization: `Bearer ${process.env.AUTHORIZATION}`,
-    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
