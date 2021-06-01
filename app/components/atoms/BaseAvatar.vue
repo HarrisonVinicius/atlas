@@ -1,6 +1,6 @@
 <template>
   <div class="base-avatar">
-    <img :src="imgPath" alt="avatar" />
+    <img :src="imgPath" alt="avatar" class="base-avatar__image" />
   </div>
 </template>
 
@@ -21,4 +21,9 @@ export default {
 .base-avatar
   height: 100%
   width: 100%
+
+  &__image
+    height: 100%
+    width: 100%
+    border-radius: 55%
 </style>
