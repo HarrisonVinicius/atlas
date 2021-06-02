@@ -3,14 +3,22 @@
     <BaseNavBar title="Lista de Usuários" />
     <div class="users-list__container">
       <BaseCard class="users-list__container__card">
-        <TheUsersList />
+        <TheUsersList :items="usersList" />
       </BaseCard>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  name: 'UsersList',
+
+  computed: {
+    ...mapState(['usersList']),
+  },
+}
 </script>
 
 <style lang="sass" scoped>

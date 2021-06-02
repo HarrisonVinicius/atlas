@@ -1,7 +1,7 @@
 <template>
   <div class="the-user-perfil">
     <div class="the-user-perfil__header">
-      <PerfilHeader />
+      <PerfilHeader :header-data="userData" />
     </div>
     <div class="the-user-perfil__tabs">
       <BaseTabs>
@@ -13,8 +13,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'TheUserPerfil',
+
+  computed: {
+    ...mapState(['perfilData', 'userData']),
+  },
 }
 </script>
 

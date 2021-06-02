@@ -19,37 +19,36 @@
         v-for="(item, index) in items"
         :key="index"
         class="the-users-list__list__item"
-        @click="goToUserPerfilHandler"
+        @click="goToUserPerfilHandler(item)"
       >
-        <UserCard />
+        <UserCard :user-name="item.login" :avatar="item.avatar_url" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'TheUsersList',
 
-  data() {
-    return {
-      items: [
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-        { item: 1 },
-      ],
-    }
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
   },
 
   methods: {
-    goToUserPerfilHandler() {
+    ...mapActions({
+      setPerfilData: 'setPerfilData',
+      getUserData: 'getUserData',
+    }),
+
+    async goToUserPerfilHandler(payload) {
+      this.setPerfilData(payload)
+      await this.getUserData(payload.login)
       this.$router.push({
         path: 'user-perfil',
         query: {
