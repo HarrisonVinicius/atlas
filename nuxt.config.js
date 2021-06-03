@@ -30,6 +30,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/services/api',
     { src: '~/plugins/vue-scrollto', mode: 'client' },
     { src: '~/plugins/SimpleSVG', mode: 'client' },
     { src: '~/plugins/vue-money', mode: 'client' },
@@ -62,8 +63,6 @@ export default {
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     '@nuxtjs/style-resources',
-    // https://www.npmjs.com/package/@nuxtjs/device
-    '@nuxtjs/device',
     // https://www.npmjs.com/package/vue-scrollto
     'vue-scrollto/nuxt',
   ],
@@ -71,10 +70,6 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.BASE_URL,
-    // 'https://api-app.dmcview.com.br',
-    headers: {
-      Authorization: `Bearer ${process.env.AUTHORIZATION}`,
-    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
