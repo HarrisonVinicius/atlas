@@ -4,17 +4,12 @@
       <span>Bio</span>
     </div>
     <div class="about-perfil-tab__description">
-      <span
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam eos
-        pariatur distinctio, totam maxime dolorum modi necessitatibus architecto
-        similique culpa assumenda blanditiis et, nam facilis sapiente provident
-        laborum earum mollitia.</span
-      >
+      <span>{{ bio }}</span>
     </div>
     <div class="about-perfil-tab__links">
-      <span> São Francisco </span>
+      <span> {{ location }} </span>
       <br />
-      <span> www.asdasd.com</span>
+      <span> {{ blog }}</span>
     </div>
   </div>
 </template>
@@ -22,6 +17,27 @@
 <script>
 export default {
   name: 'AboutPerfilTab',
+
+  data() {
+    return {
+      bio: '',
+      location: '',
+      blog: '',
+    }
+  },
+
+  props: {
+    aboutData: {
+      type: Object,
+      default: () => {},
+    },
+  },
+
+  mounted() {
+    if (this.aboutData.bio) this.bio = this.aboutData.bio
+    if (this.aboutData.location) this.location = this.aboutData.location
+    if (this.aboutData.blog) this.blog = this.aboutData.blog
+  },
 }
 </script>
 

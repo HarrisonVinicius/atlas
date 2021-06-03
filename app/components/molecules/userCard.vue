@@ -3,10 +3,10 @@
     <BaseCard class="user-card__wrapper">
       <div class="user-card__wrapper__content">
         <div class="user-card__wrapper__content__avatar">
-          <BaseAvatar />
+          <BaseAvatar :img-path="avatar" />
         </div>
         <div class="user-card__wrapper__content__user-name">
-          <span> teste12345... </span>
+          <span> {{ userName }} </span>
         </div>
       </div>
     </BaseCard>
@@ -16,6 +16,18 @@
 <script>
 export default {
   name: 'UserCard',
+
+  props: {
+    userName: {
+      type: String,
+      default: 'user name',
+    },
+
+    avatar: {
+      type: String,
+      default: '',
+    },
+  },
 }
 </script>
 

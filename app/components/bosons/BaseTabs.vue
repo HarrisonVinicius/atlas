@@ -110,4 +110,7 @@ export default {
         &__tab
           &__content
             padding: 60px
+
+            @media (max-width: 1280px)
+              padding: 20px
 </style>

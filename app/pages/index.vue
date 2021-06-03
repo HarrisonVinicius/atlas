@@ -12,12 +12,17 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Default',
 
   methods: {
-    eventHandler(payload) {
-      console.log(payload)
+    ...mapActions({
+      getUsersList: 'getUsersList',
+    }),
+
+    async eventHandler(payload) {
+      await this.getUsersList(payload.userName)
       this.$router.push('/users/users-list')
     },
   },

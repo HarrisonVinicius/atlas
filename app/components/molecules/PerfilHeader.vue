@@ -2,13 +2,17 @@
   <div class="perfil-header">
     <div class="perfil-header__avatar">
       <div class="perfil-header__avatar__wrapper">
-        <BaseAvatar />
+        <BaseAvatar :img-path="avatarUrl" />
       </div>
     </div>
     <div class="perfil-header__name">
-      <span class="perfil-header__name__person-name"> name </span>
+      <span class="perfil-header__name__person-name">
+        {{ headerData.name }}
+      </span>
       <br />
-      <span class="perfil-header__name__user-name"> @username </span>
+      <span class="perfil-header__name__user-name">
+        @{{ headerData.login }}
+      </span>
     </div>
     <div class="perfil-header__infos">
       <div class="perfil-header__infos__content">
@@ -32,12 +36,31 @@ export default {
 
   data() {
     return {
+      avatarUrl: '',
+      name: '',
+      login: '',
       infos: [
-        { label: 'Seguindo', number: '122' },
-        { label: 'Projetos', number: '31' },
-        { label: 'Seguidores', number: '44' },
+        { label: 'Seguindo', number: '' },
+        { label: 'Projetos', number: '' },
+        { label: 'Seguidores', number: '' },
       ],
     }
+  },
+
+  props: {
+    headerData: {
+      type: Object,
+      default: () => {},
+    },
+  },
+
+  mounted() {
+    this.infos[0].number = this.headerData.following
+    this.infos[1].number = this.headerData.public_repos
+    this.infos[2].number = this.headerData.followers
+    if (this.headerData.avatar_url) this.avatarUrl = this.headerData.avatar_url
+    if (this.headerData.name) this.name = this.headerData.name
+    if (this.headerData.login) this.login = this.headerData.login
   },
 }
 </script>
