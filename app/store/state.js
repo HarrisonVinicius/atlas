@@ -3,4 +3,5 @@ export default () => ({
   usersList: [],
   perfilData: null,
   userData: null,
+  userRepos: null,
 })

@@ -19,4 +19,9 @@ export default {
     const res = await this.$api.$get(`/users/${payload}`)
     commit('SET_USER_DATA', res)
   },
+
+  async getUserRepos({ commit }, payload) {
+    const res = await this.$api.$get(`/users/${payload}/repos`)
+    commit('SET_USER_REPOS', res)
+  },
 }

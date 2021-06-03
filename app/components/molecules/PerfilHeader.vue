@@ -2,7 +2,7 @@
   <div class="perfil-header">
     <div class="perfil-header__avatar">
       <div class="perfil-header__avatar__wrapper">
-        <BaseAvatar :img-path="headerData.avatar_url" />
+        <BaseAvatar :img-path="avatarUrl" />
       </div>
     </div>
     <div class="perfil-header__name">
@@ -36,6 +36,9 @@ export default {
 
   data() {
     return {
+      avatarUrl: '',
+      name: '',
+      login: '',
       infos: [
         { label: 'Seguindo', number: '' },
         { label: 'Projetos', number: '' },
@@ -55,6 +58,9 @@ export default {
     this.infos[0].number = this.headerData.following
     this.infos[1].number = this.headerData.public_repos
     this.infos[2].number = this.headerData.followers
+    if (this.headerData.avatar_url) this.avatarUrl = this.headerData.avatar_url
+    if (this.headerData.name) this.name = this.headerData.name
+    if (this.headerData.login) this.login = this.headerData.login
   },
 }
 </script>

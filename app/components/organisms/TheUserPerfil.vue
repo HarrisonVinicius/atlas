@@ -5,8 +5,8 @@
     </div>
     <div class="the-user-perfil__tabs">
       <BaseTabs>
-        <template #1> <AboutPerfilTab /> </template>
-        <template #2> <PlansPerfilTab /> </template>
+        <template #1> <AboutPerfilTab :about-data="userData" /> </template>
+        <template #2> <ProjectsPerfilTab /> </template>
       </BaseTabs>
     </div>
   </div>
@@ -20,6 +20,10 @@ export default {
 
   computed: {
     ...mapState(['perfilData', 'userData']),
+  },
+
+  mounted() {
+    if (!this.perfilData || !this.userData) this.$router.push('/')
   },
 }
 </script>
