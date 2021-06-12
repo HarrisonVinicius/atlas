@@ -80,6 +80,7 @@ export default {
 
     &__item
       height: 15rem
+      width: 10rem
 
       @media (max-width: 480px)
         height: 8rem

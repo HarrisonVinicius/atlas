@@ -4,4 +4,5 @@ export default () => ({
   perfilData: null,
   userData: null,
   userRepos: null,
+  userNameSearched: null,
 })
