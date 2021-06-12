@@ -84,6 +84,7 @@ export default {
 
       @media (max-width: 480px)
         height: 8rem
+        width: 100%
 
   &__header
     display: flex

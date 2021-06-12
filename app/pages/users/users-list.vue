@@ -44,7 +44,6 @@ export default {
         if (res.items.length) {
           this.page += 1
           this.listItems.push(...res.items)
-          console.log(this.listItems)
           $state.loaded()
         } else {
           $state.complete
