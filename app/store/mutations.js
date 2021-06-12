@@ -8,4 +8,5 @@ export default {
   SET_PERFIL_DATA: setFactory('perfilData'),
   SET_USER_DATA: setFactory('userData'),
   SET_USER_REPOS: setFactory('userRepos'),
+  SET_USER_NAME_SEARCHED: setFactory('userNameSearched'),
 }
