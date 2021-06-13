@@ -6,8 +6,6 @@ this project is not finished yet!
 given the degree of development of the project, some bugs still exist and some features were not implemented.
 
 features to be done: 
-* Users List Pagination 
-* Infinte scroll 
 * Use SessionStorage to save the app data 
 * Conect store to sessionStorage 
 * Redirect the user to the perfil page when the button "Buscar" is clicked 
@@ -16,8 +14,6 @@ features to be done:
 * a few fixes in CSS/SASS
 * a few fixes in docker config
 * code documentation 
-* use Array.filter method to filter the list of users by the input value
-* loader component
 * unit testing ( Jest )
 and few more features... 
 
