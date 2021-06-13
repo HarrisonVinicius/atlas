@@ -35,6 +35,7 @@ export default {
     { src: '~/plugins/SimpleSVG', mode: 'client' },
     { src: '~/plugins/vue-money', mode: 'client' },
     { src: '~/plugins/vue-lottie', mode: 'client' },
+    { src: '~/plugins/vue-infinite-loading', mode: 'client' },
     { src: '~/plugins/vue-scroll-stop', mode: 'client' },
   ],
 

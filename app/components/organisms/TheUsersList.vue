@@ -5,7 +5,10 @@
         <h1>Search Results</h1>
       </div>
       <div class="the-users-list__header__search">
-        <BaseInput>
+        <BaseInput
+          v-model="searchInputValue"
+          placeholder="Buscar na lista abaixo"
+        >
           <img
             class="the-users-list__header__search__icon"
             src="/icons/search-icon.png"
@@ -16,7 +19,7 @@
     </div>
     <div class="the-users-list__list">
       <div
-        v-for="(item, index) in items"
+        v-for="(item, index) in listItems"
         :key="index"
         class="the-users-list__list__item"
         @click="goToUserPerfilHandler(item)"
@@ -40,6 +43,26 @@ export default {
     },
   },
 
+  data() {
+    return {
+      listItems: [],
+      searchInputValue: null,
+    }
+  },
+
+  mounted() {
+    this.listItems = this.items
+  },
+
+  watch: {
+    searchInputValue: {
+      handler() {
+        this.listItems = this.items
+        this.searchHandler()
+      },
+    },
+  },
+
   methods: {
     ...mapActions({
       setPerfilData: 'setPerfilData',
@@ -55,6 +78,16 @@ export default {
           userId: '00000000',
         },
       })
+    },
+
+    searchHandler() {
+      let filteredArray = []
+      filteredArray = this.listItems.filter((item) =>
+        this.searchInputValue
+          .split(' ')
+          .every((term) => item.login.includes(term))
+      )
+      this.listItems = filteredArray
     },
   },
 }
@@ -80,9 +113,11 @@ export default {
 
     &__item
       height: 15rem
+      width: 10rem
 
       @media (max-width: 480px)
         height: 8rem
+        width: 100%
 
   &__header
     display: flex

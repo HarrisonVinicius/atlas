@@ -19,10 +19,18 @@ export default {
   methods: {
     ...mapActions({
       getUsersList: 'getUsersList',
+      setSearchedUserName: 'setUserNameSearched',
     }),
 
     async eventHandler(payload) {
-      await this.getUsersList(payload.userName)
+      const obj = {
+        userName: payload.userName,
+        page: 1,
+      }
+      await Promise.all([
+        this.getUsersList(obj),
+        this.setSearchedUserName(obj.userName),
+      ])
       this.$router.push('/users/users-list')
     },
   },
