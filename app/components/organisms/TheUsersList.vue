@@ -5,7 +5,10 @@
         <h1>Search Results</h1>
       </div>
       <div class="the-users-list__header__search">
-        <BaseInput v-model="searchInputValue">
+        <BaseInput
+          v-model="searchInputValue"
+          placeholder="Buscar na lista abaixo"
+        >
           <img
             class="the-users-list__header__search__icon"
             src="/icons/search-icon.png"
